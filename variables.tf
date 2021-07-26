@@ -21,3 +21,13 @@ variable "reduce_flux_resources" {
   type    = bool
   default = false
 }
+
+variable create_bigbang_ns {
+  type = bool
+  default = true
+}
+
+variable create_flux_system_ns {
+  type = bool
+  default = true
+}
