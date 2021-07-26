@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+export KUBECONFIG=${1:-~/.kube/config}
 
 # Wait for the istio namesapce so get svc doesn't puke
 until kubectl get ns istio-system 1>&- 2>&-
