@@ -21,3 +21,9 @@ resource "kubectl_manifest" "flux_deployment_light" {
     kubernetes_secret.private_registry
   ]
 }
+
+resource "time_sleep" "wait_after_flux_deployment" {
+  depends_on = [kubectl_manifest.flux_deployment_light, kubectl_manifest.flux_deployment]
+
+  create_duration = "15s"
+}
